@@ -4,17 +4,18 @@ Filename:    TutorialApplication.cpp
 -----------------------------------------------------------------------------
 
 This source file is part of the
-   ___                 __    __ _ _    _ 
-  /___\__ _ _ __ ___  / / /\ \ (_) | _(_)
- //  // _` | '__/ _ \ \ \/  \/ / | |/ / |
+___                 __    __ _ _    _ 
+/___\__ _ _ __ ___  / / /\ \ (_) | _(_)
+//  // _` | '__/ _ \ \ \/  \/ / | |/ / |
 / \_// (_| | | |  __/  \  /\  /| |   <| |
 \___/ \__, |_|  \___|   \/  \/ |_|_|\_\_|
-      |___/                              
-      Tutorial Framework
-      http://www.ogre3d.org/tikiwiki/
+|___/                              
+Tutorial Framework
+http://www.ogre3d.org/tikiwiki/
 -----------------------------------------------------------------------------
 */
 #include "TutorialApplication.h"
+#include "GameObject.h"
 
 //-------------------------------------------------------------------------------------
 TutorialApplication::TutorialApplication(void)
@@ -28,7 +29,17 @@ TutorialApplication::~TutorialApplication(void)
 //-------------------------------------------------------------------------------------
 void TutorialApplication::createScene(void)
 {
-    // create your scene here :)
+	mSceneMgr->setAmbientLight(Ogre::ColourValue(.7, .7, .7));
+	mSceneMgr->setShadowTechnique(Ogre::SHADOWTYPE_STENCIL_ADDITIVE);
+	mCamera->setPosition(0,50,-50);
+	mCamera->lookAt(0,50,0);
+
+	GameObject* player = new GameObject(mSceneMgr);
+	player->createGameObject("x","robot.mesh");
+
+	GameObject* cube = new GameObject(mSceneMgr);
+	cube->createGameObject("c","cube.mesh");
+	cube->translate(Vector3(0,0,50));
 }
 
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
@@ -41,27 +52,27 @@ extern "C" {
 #endif
 
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
-    INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR strCmdLine, INT )
+	INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR strCmdLine, INT )
 #else
-    int main(int argc, char *argv[])
+	int main(int argc, char *argv[])
 #endif
-    {
-        // Create application object
-        TutorialApplication app;
+	{
+		// Create application object
+		TutorialApplication app;
 
-        try {
-            app.go();
-        } catch( Ogre::Exception& e ) {
+		try {
+			app.go();
+		} catch( Ogre::Exception& e ) {
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
-            MessageBox( NULL, e.getFullDescription().c_str(), "An exception has occured!", MB_OK | MB_ICONERROR | MB_TASKMODAL);
+			MessageBox( NULL, e.getFullDescription().c_str(), "An exception has occured!", MB_OK | MB_ICONERROR | MB_TASKMODAL);
 #else
-            std::cerr << "An exception has occured: " <<
-                e.getFullDescription().c_str() << std::endl;
+			std::cerr << "An exception has occured: " <<
+				e.getFullDescription().c_str() << std::endl;
 #endif
-        }
+		}
 
-        return 0;
-    }
+		return 0;
+	}
 
 #ifdef __cplusplus
 }

@@ -13,12 +13,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Quelldateien\GameObjects">
+      <UniqueIdentifier>{194bc3a5-2672-468b-b9cc-efbcb0a64a53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\GameObjects">
+      <UniqueIdentifier>{c9fa4905-3084-491b-b0e3-6f1c459804d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Scenes">
+      <UniqueIdentifier>{9434d2fb-d578-4f52-905f-6e087648871b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Scenes">
+      <UniqueIdentifier>{912d6207-9885-45fa-85ca-b7f02642d05d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Helpers">
+      <UniqueIdentifier>{916162f8-5291-452f-b309-619d362c3f0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Helpers">
+      <UniqueIdentifier>{c49928b4-eb3e-4205-b28d-dc4db90fcfbe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseApplication.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="TutorialApplication.cpp">
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Quelldateien\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Quelldateien\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Quelldateien\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="GameGrid.cpp">
+      <Filter>Quelldateien\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -26,7 +56,22 @@
     <ClInclude Include="BaseApplication.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="TutorialApplication.h">
+    <ClInclude Include="GameObject.h">
+      <Filter>Headerdateien\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Headerdateien\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Headerdateien\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameGrid.h">
+      <Filter>Headerdateien\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -49,5 +94,10 @@
     <None Include="resources.cfg">
       <Filter>Ressourcendateien</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="config.txt">
+      <Filter>Ressourcendateien</Filter>
+    </Text>
   </ItemGroup>
 </Project>

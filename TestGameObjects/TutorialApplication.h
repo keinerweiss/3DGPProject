@@ -19,6 +19,7 @@ This source file is part of the
 
 #include "BaseApplication.h"
 
+
 class TutorialApplication : public BaseApplication
 {
 public:

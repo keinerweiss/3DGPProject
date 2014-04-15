@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AiWanFan", "AiWanFan\AiWanFan.vcxproj", "{0C2BC456-BB1C-4476-BC59-464433D136CB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestGameObjects", "TestGameObjects\TestGameObjects.vcxproj", "{752B6C27-8734-4E97-A62A-46990F00BEA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{0C2BC456-BB1C-4476-BC59-464433D136CB}.Debug|Win32.Build.0 = Debug|Win32
 		{0C2BC456-BB1C-4476-BC59-464433D136CB}.Release|Win32.ActiveCfg = Release|Win32
 		{0C2BC456-BB1C-4476-BC59-464433D136CB}.Release|Win32.Build.0 = Release|Win32
+		{752B6C27-8734-4E97-A62A-46990F00BEA9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{752B6C27-8734-4E97-A62A-46990F00BEA9}.Debug|Win32.Build.0 = Debug|Win32
+		{752B6C27-8734-4E97-A62A-46990F00BEA9}.Release|Win32.ActiveCfg = Release|Win32
+		{752B6C27-8734-4E97-A62A-46990F00BEA9}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

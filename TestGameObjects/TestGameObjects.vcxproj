@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0C2BC456-BB1C-4476-BC59-464433D136CB}</ProjectGuid>
+    <ProjectGuid>{752B6C27-8734-4E97-A62A-46990F00BEA9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>AiWanFan</RootNamespace>
+    <RootNamespace>TestGameObjects</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -52,7 +52,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\..\include;..\..\..\include\OIS;..\..\..\include\OGRE;..\..\..\boost;..\..\..\include\OGRE\Overlay</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\AiWanFan;..\..\..\include;..\..\..\include\OIS;..\..\..\include\OGRE;..\..\..\boost;..\..\..\include\OGRE\Overlay</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -102,21 +102,14 @@ copy /Y "resources.cfg" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\AiWanFan\GameObject.cpp" />
     <ClCompile Include="BaseApplication.cpp" />
-    <ClCompile Include="Config.cpp" />
-    <ClCompile Include="GameGrid.cpp" />
-    <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="TutorialApplication.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\AiWanFan\GameObject.h" />
     <ClInclude Include="BaseApplication.h" />
-    <ClInclude Include="Config.h" />
-    <ClInclude Include="GameGrid.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="Game.h" />
+    <ClInclude Include="TutorialApplication.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ogre.cfg" />
@@ -127,7 +120,14 @@ copy /Y "resources.cfg" "$(OutDir)"</Command>
     <None Include="resources_d.cfg" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="config.txt" />
+    <ProjectReference Include="..\AiWanFan\AiWanFan.vcxproj">
+      <Project>{0c2bc456-bb1c-4476-bc59-464433d136cb}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

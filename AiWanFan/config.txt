@@ -1,0 +1,2 @@
+[Game]
+CharacterWalkSpeed = 3.5
